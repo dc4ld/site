@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 20% that isn't a discount — Datum Markets</title>
+<meta name="description" content="Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30%, but customers pay the full charge in every year and no part of it can be reduced by wheeling.">
+<link rel="canonical" href="https://datummarkets.co.uk/analysis/gcc-reallocation/">
+<meta property="og:title" content="The 20% that isn't a discount">
+<meta property="og:description" content="Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30%. Customers pay the full charge in every year — and no part of it can be reduced by wheeling.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://datummarkets.co.uk/analysis/gcc-reallocation/">
+<meta property="og:site_name" content="Datum Markets">
+<meta property="article:published_time" content="2026-09-14">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The 20% that isn't a discount">
+<meta name="twitter:description" content="Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30%. Customers pay the full charge in every year — and no part of it can be reduced by wheeling.">
+<style>
+  :root {
+    --ground: #F0F1F5; --surface: #FFFFFF; --ink: #13171F;
+    --ink-2: #3E4756; --ink-3: #6C7688; --border: #D3D8E2;
+    --accent: #22407A; --accent-soft: #E1E7F3;
+    --f-display: "Helvetica Neue", Arial, sans-serif;
+    --f-body: Georgia, "Times New Roman", serif;
+    --f-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0B0E14; --surface: #131822; --ink: #E3E8F0;
+      --ink-2: #A9B3C4; --ink-3: #788295; --border: #232B3A;
+      --accent: #86A9E4; --accent-soft: #162034;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--f-body); font-size: 17px; line-height: 1.62;
+    padding: 0 1.25rem; -webkit-font-smoothing: antialiased;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  .wrap { max-width: 42rem; margin: 0 auto; width: 100%; flex: 1; }
+  header { padding: 4.5rem 0 2rem; border-bottom: 2px solid var(--ink); }
+  .kicker {
+    font-family: var(--f-mono); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 1.2rem;
+  }
+  .kicker a { color: inherit; text-decoration: none; }
+  .kicker a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  h1 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1.05;
+    letter-spacing: -0.015em; margin: 0 0 1rem;
+  }
+  .stand { font-size: 1.1rem; color: var(--ink-2); margin: 0; max-width: 36rem; }
+  .byline {
+    font-family: var(--f-display); font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.1em; font-variant-caps: all-small-caps;
+    text-transform: lowercase; color: var(--ink-3);
+    margin: 1.4rem 0 0;
+  }
+  section { padding: 2.5rem 0; }
+  .prose { font-size: 1.03rem; line-height: 1.72; }
+  p { margin: 0 0 1.15em; }
+  p:last-child { margin-bottom: 0; }
+  h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 1.25rem; letter-spacing: -0.005em;
+    margin: 2.4rem 0 0.9rem;
+  }
+  blockquote {
+    margin: 1.6rem 0; padding: 1.1rem 1.4rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 3px;
+    font-size: 1rem; color: var(--ink-2);
+  }
+  blockquote p { margin: 0; }
+  ol { margin: 1.4rem 0; padding-left: 1.4rem; }
+  ol li { margin: 0 0 0.9em; padding-left: 0.3rem; }
+  ol li:last-child { margin-bottom: 0; }
+  .table-wrap {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    margin: 1.6rem 0; border: 1px solid var(--border);
+    border-radius: 3px; background: var(--surface);
+  }
+  table {
+    border-collapse: collapse; width: 100%;
+    font-family: var(--f-mono); font-size: 0.82rem;
+  }
+  caption {
+    caption-side: top; text-align: left; padding: 0.9rem 1.1rem 0;
+    font-family: var(--f-display); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.02em; color: var(--ink-3);
+  }
+  th, td { padding: 0.6rem 1.1rem; text-align: left; white-space: nowrap; }
+  thead th {
+    font-weight: 600; color: var(--ink-3); text-transform: uppercase;
+    letter-spacing: 0.07em; font-size: 0.7rem;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr + tr td { border-top: 1px solid var(--border); }
+  tbody td:last-child { color: var(--accent); }
+  figure { margin: 2rem 0; }
+  .chart {
+    display: block; width: 100%; height: auto;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 3px; padding: 0.4rem 0;
+  }
+  .chart text { font-family: var(--f-display); }
+  figcaption {
+    font-family: var(--f-display); font-size: 0.82rem;
+    color: var(--ink-3); margin-top: 0.7rem; line-height: 1.5;
+  }
+  code {
+    font-family: var(--f-mono); font-size: 0.86em;
+    background: var(--accent-soft); color: var(--ink);
+    padding: 0.1em 0.35em; border-radius: 2px;
+  }
+  hr.rule {
+    border: 0; border-top: 1px solid var(--border);
+    margin: 2.6rem 0 2rem;
+  }
+  .endnote { font-size: 0.93rem; color: var(--ink-3); }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  footer {
+    border-top: 1px solid var(--border); padding: 1.4rem 0 2.5rem;
+    font-family: var(--f-mono); font-size: 0.72rem;
+    line-height: 1.7; color: var(--ink-3);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker"><a href="/">Datum Markets</a></p>
+    <h1>The 20% that isn't a discount</h1>
+    <p class="stand"><strong>Consultancy summaries describe Eskom's new generation capacity charge as "phased in at 20% in year 1 and 30% in years 2 and 3". The numbers are right; the framing is wrong. Customers pay the full charge every year — and for anyone modelling a wheeled power purchase agreement, what actually changed matters more than a price increase.</strong></p>
+    <p class="byline">David Jinadu · Datum Markets · 14 September 2026</p>
+  </header>
+
+  <section class="prose">
+
+    <p>Eskom's 2026/27 tariffs arrived with a headline increase of 8.76% for direct customers. Underneath it, one component of the Megaflex tariff rose by roughly half again.</p>
+
+    <p>The generation capacity charge on Megaflex non-local-authority supplies went from R8.09 to R12.27 per kVA per month at 500V–66kV. That is a factor of 1.52. The same multiple appears at every voltage band: 1.5158 below 500V, 1.5167 at 500V–66kV, 1.5163 at 66–132kV, 1.5171 above 132kV.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Generation capacity charge, 2025/26 to 2026/27</caption>
+        <thead>
+          <tr><th scope="col">Voltage band</th><th scope="col">Ratio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>below 500V</td><td>1.5158</td></tr>
+          <tr><td>500V–66kV</td><td>1.5167</td></tr>
+          <tr><td>66–132kV</td><td>1.5163</td></tr>
+          <tr><td>above 132kV</td><td>1.5171</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Four voltage bands, two tariff years, one ratio. That is not a price increase — a price increase does not arrive at the same multiple across four unrelated rates. It is a reallocation, and the regulator's decision says so in terms.</p>
+
+    <h2>Two decisions, routinely conflated</h2>
+
+    <p>Part of why this gets missed is that two separate regulatory decisions are at work, and they are usually discussed as one.</p>
+
+    <p>NERSA's MYPD6 determination sets <strong>how much</strong> revenue Eskom may recover. That is the 8.76%, and it was announced, reported and budgeted for.</p>
+
+    <p>A separate decision, on Eskom's Electricity Retail Tariff Plan, decides <strong>how</strong> that revenue is structured into individual charges. That is where the generation capacity charge moved.</p>
+
+    <p>The 8.76% is the revenue. The 1.5× is the structure. They are not the same event — and only one of them was announced.</p>
+
+    <h2>What the decision actually says</h2>
+
+    <p>The generation capacity charge (GCC) is Eskom's mechanism for recovering the fixed costs of generation capacity through a fixed charge instead of through the price of energy. The Cost of Supply study allocated <strong>R19.05 billion</strong> of generation fixed cost to it — about 7% of total generation cost, reduced from 23% in Eskom's previous application after customer objections. It is levied in rands per kVA per month, calculated by dividing allocated costs by <em>annual utilised capacity</em>: the higher of a customer's notified maximum demand, or the maximum demand actually registered over a rolling twelve-month period.</p>
+
+    <p>NERSA agreed with the principle. Separating fixed costs "sends the right economic signals", and Eskom "must also prepare for a changing Electricity Supply Industry that is moving towards a market". What it did not accept was the step change. Its stated concern was the impact on below-average users, which it found "severe at its current level".</p>
+
+    <p>So it approved the charge, then throttled how much of it appears as a fixed line:</p>
+
+    <blockquote>
+      <p>"the allocation towards fixed charges must be reduced to 20% of its current level in year 1 and 30% of the current proposed level in years 2 and 3. The remaining portion of the GCC (80% in year 1 and 70% in year 2 and 3) is included and recovered through the energy charge."</p>
+    </blockquote>
+
+    <p>That second sentence is the one the summaries drop.</p>
+
+    <p>The 20% and 30% are not the share of the charge customers pay. They are the share that appears as a fixed R/kVA line on the bill. The other 80%, then 70%, is still collected — inside the energy charge.</p>
+
+    <p><strong>Customers pay 100% of the generation capacity charge in every year of the phase-in.</strong> What moves is the split between fixed and variable recovery. And NERSA sets no fully-phased level at all: the decision stops at 30%. There is no year four in it.</p>
+
+    <figure>
+      <svg class="chart" viewBox="0 0 400 340" role="img" aria-labelledby="chartTitle chartDesc" xmlns="http://www.w3.org/2000/svg">
+        <title id="chartTitle">How the generation capacity charge is recovered in year 1 and in years 2 and 3</title>
+        <desc id="chartDesc">Two stacked bars of identical total height, each totalling 100%. In year 1, 20% of the generation capacity charge is recovered as a fixed rand-per-kVA charge and 80% through the energy charge. In years 2 and 3, 30% is recovered as the fixed charge and 70% through the energy charge. The total is 100% in both cases, so nothing is discounted; only the split between fixed and energy-charge recovery changes.</desc>
+
+        <text x="115" y="46" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">100%</text>
+        <text x="275" y="46" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">100%</text>
+
+        <rect x="70" y="58" width="90" height="160" fill="var(--accent)" fill-opacity="0.22" stroke="var(--accent)" stroke-opacity="0.45"></rect>
+        <rect x="70" y="218" width="90" height="40" fill="var(--accent)"></rect>
+        <text x="115" y="143" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">80%</text>
+        <text x="115" y="243" text-anchor="middle" font-size="15" font-weight="700" fill="var(--surface)">20%</text>
+
+        <rect x="230" y="58" width="90" height="140" fill="var(--accent)" fill-opacity="0.22" stroke="var(--accent)" stroke-opacity="0.45"></rect>
+        <rect x="230" y="198" width="90" height="60" fill="var(--accent)"></rect>
+        <text x="275" y="133" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">70%</text>
+        <text x="275" y="233" text-anchor="middle" font-size="15" font-weight="700" fill="var(--surface)">30%</text>
+
+        <text x="115" y="280" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">Year 1</text>
+        <text x="275" y="280" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">Years 2 &amp; 3</text>
+
+        <rect x="70" y="299" width="12" height="12" fill="var(--accent)"></rect>
+        <text x="90" y="309" font-size="13" fill="var(--ink-2)">fixed R/kVA charge</text>
+        <rect x="70" y="319" width="12" height="12" fill="var(--accent)" fill-opacity="0.22" stroke="var(--accent)" stroke-opacity="0.45"></rect>
+        <text x="90" y="329" font-size="13" fill="var(--ink-2)">recovered through the energy charge</text>
+      </svg>
+      <figcaption>The total does not change. Only the split.</figcaption>
+    </figure>
+
+    <h2>Why the split matters more than the total</h2>
+
+    <p>If the total is unchanged, a reallocation might look like an accounting detail. It is not, because fixed and variable charges respond to entirely different behaviour.</p>
+
+    <p>A charge levied on utilised capacity is driven by your single hungriest half-hour in a rolling twelve-month window. A charge inside the energy price is driven by every kilowatt-hour you consume. Move a large cost from the second basis to the first, and two customers with identical annual consumption but different load factors will see their bills move in opposite directions — without either of them changing anything.</p>
+
+    <p>The customer running flat around the clock spreads the capacity charge across a great many kilowatt-hours and gains. The customer with sharp peaks and low utilisation pays the same fixed charge across far fewer units and loses.</p>
+
+    <p>NERSA's own reasoning confirms the direction. The users it moved to protect were precisely the "below-average" ones — the customers for whom a demand-based charge lands hardest. The throttle exists because the reallocation has winners and losers, and the regulator could see who they were.</p>
+
+    <h2>The wheeling exclusion</h2>
+
+    <p>Then comes the sentence I have not seen quoted anywhere:</p>
+
+    <blockquote>
+      <p>"To ensure that all customers contribute to this charge, this portion of the GCC included in the energy charge is excluded from the energy credit provided under wheeling and net-billing (offset) transactions."</p>
+    </blockquote>
+
+    <p>A wheeling transaction works by crediting a customer for the Eskom energy they no longer buy. That credit is the entire economic basis of the 20–30% saving that wheeled power purchase agreements are marketed on. This clause carves the generation capacity charge out of it.</p>
+
+    <p>Take the two portions in turn. The fixed portion is a demand charge on utilised capacity — payable whether the electrons came from Eskom or from a wind farm three provinces away, because wheeling does not reduce your notified maximum demand. The remaining portion sits inside the energy charge and is <em>explicitly excluded</em> from the credit.</p>
+
+    <p>Which means the position is simpler and harder than most models assume: <strong>the generation capacity charge cannot be reduced by wheeling at all.</strong> Not the fixed part, not the energy-embedded part. R19 billion of Eskom's cost base has been deliberately placed beyond the reach of offset transactions, and the decision says why — "to ensure that all customers contribute to this charge".</p>
+
+    <p>The phase-in does not change that immunity. It changes only whether the unavoidable cost is assessed on your kVA or on your kWh. So for a wheeling customer the lever against this charge is demand management, not energy substitution — and a model that credits any part of the GCC back to the customer overstates the saving.</p>
+
+    <p>Whether that materially dents a particular deal depends on the customer's load factor and the size of the GCC against the rest of their bill. That is arithmetic rather than opinion. But it is arithmetic that has to be done per customer, and a model built on the 2025/26 split will get it wrong.</p>
+
+    <h2>Three things worth checking</h2>
+
+    <p>If you are modelling a wheeled PPA or building a 2026/27 electricity budget:</p>
+
+    <ol>
+      <li><strong>Which phase-in year does your rate reflect?</strong> The 2026/27 schedule reflects the 30% fixed allocation. A model still carrying 2025/26 rates has its GCC line roughly 1.5× too low.</li>
+      <li><strong>Does your model credit the GCC portion inside the energy charge?</strong> If it does, it overstates the wheeling saving. The decision excludes it.</li>
+      <li><strong>What is your utilised capacity actually set to?</strong> The denominator is the higher of notified maximum demand or the maximum registered over a rolling twelve months. One bad half-hour eleven months ago is still in this month's bill.</li>
+    </ol>
+
+    <h2>Method and sources</h2>
+
+    <p>Every figure here comes from public documents.</p>
+
+    <p>The rates were extracted from Eskom's published tariff rates workbooks for 2025/26 and 2026/27, then independently cross-checked figure for figure against the corresponding Schedule of Standard Prices — sixteen values across four voltage bands and two years, VAT-exclusive and VAT-inclusive, all matching.</p>
+
+    <p>The quotations, the R19.05 billion allocation and the 7%-down-from-23% comparison are from NERSA's Reasons for Decision on Eskom's Electricity Retail Tariff Plan, section 8.9. The 8.76% increase for direct customers is from Eskom's published 2026/27 tariff increase notice, which attributes it to NERSA's MYPD6 decisions; local authority tariffs rose 9.01% from 1 July, which is itself a reminder to check which schedule you are reading.</p>
+
+    <p>The 1.5× ratio is computed from the two published schedules. NERSA publishes the 20/30 and 80/70 splits; the ratio follows from them and from the underlying rates, and is not itself a regulated figure.</p>
+
+    <p>One note on the source documents. Eskom's published 2025/26 rates workbook contains cells on the WEPS sheet that evaluate to <code>#REF!</code> as shipped — the rates are readable in the PDF schedule instead, and nothing above depends on them. It is a small thing, and a useful reminder: a published file is not the same as a checked one.</p>
+
+    <hr class="rule">
+
+    <p class="endnote"><em>Datum Markets builds independent tariff and wheeling analysis for southern African power markets from primary sources only. Every figure we publish carries its source reference. Enquiries: <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></em></p>
+
+    <p class="endnote"><em>This is analysis, not financial, legal or investment advice.</em></p>
+
+  </section>
+
+  <footer>
+    <p>Datum Markets · David Jinadu, United Kingdom. Everything we publish is built from public primary sources — regulator decisions, published tariff schedules, market operator reports — and every figure carries its source reference. Nothing here is financial, legal or investment advice.</p>
+  </footer>
+
+</div>
+</body>
+</html>

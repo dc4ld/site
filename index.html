@@ -64,7 +64,13 @@
     padding: 1.3rem 1.5rem; margin: 1.2rem 0;
   }
   .card h2 { font-size: 1.05rem; margin: 0 0 0.4rem; }
+  .card h2 a { text-decoration: none; }
+  .card h2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .card p { font-size: 0.97rem; color: var(--ink-2); }
+  .card .meta {
+    font-family: var(--f-mono); font-size: 0.72rem;
+    letter-spacing: 0.04em; color: var(--ink-3); margin: 0.7rem 0 0;
+  }
   a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
   footer {
     border-top: 1px solid var(--border); padding: 1.4rem 0 2.5rem;
@@ -100,8 +106,9 @@
     </div>
 
     <div class="card">
-      <h2>Analysis — publishing from September 2026</h2>
-      <p>First up: the regulator quietly changed how Eskom's generation capacity charge is recovered, and the effect on wheeling deals is materially different from how it's commonly summarised. We read the decision itself, rebuilt the numbers from both years' published schedules, and verified every figure — sixteen out of sixteen.</p>
+      <h2><a href="/analysis/gcc-reallocation/">The 20% that isn't a discount</a></h2>
+      <p>Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30% — customers pay the full charge in every year, and no part of it can be reduced by wheeling.</p>
+      <p class="meta">14 September 2026 &middot; <a href="/analysis/gcc-reallocation/">Read the analysis</a></p>
     </div>
 
     <p style="font-family:var(--f-mono);font-size:0.85rem;color:var(--ink-3)">Enquiries: <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></p>
