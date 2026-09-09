@@ -1,0 +1,4 @@
+# Keep working files in the repo but off the published site.
+exclude:
+  - piece-1-draft.md
+  - README.md

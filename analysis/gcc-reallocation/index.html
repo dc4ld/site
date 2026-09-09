@@ -68,6 +68,23 @@
     font-size: 1.25rem; letter-spacing: -0.005em;
     margin: 2.4rem 0 0.9rem;
   }
+  .summary {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 3px;
+    padding: 1.2rem 1.5rem; margin: 0 0 2.2rem;
+  }
+  .summary h2 {
+    font-family: var(--f-mono); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 0.85rem;
+  }
+  .summary ul { margin: 0; padding-left: 1.15rem; }
+  .summary li {
+    font-size: 0.95rem; line-height: 1.6;
+    color: var(--ink-2); margin: 0 0 0.75em; padding-left: 0.15rem;
+  }
+  .summary li:last-child { margin-bottom: 0; }
+  .summary li strong { color: var(--ink); }
   blockquote {
     margin: 1.6rem 0; padding: 1.1rem 1.4rem;
     background: var(--surface); border: 1px solid var(--border);
@@ -144,6 +161,15 @@
   </header>
 
   <section class="prose">
+
+    <div class="summary">
+      <h2>The short version</h2>
+      <ul>
+        <li><strong>Eskom's 2026/27 generation capacity charge is about 1.5× the 2025/26 rate across every Megaflex voltage band.</strong> That is a reallocation between fixed and variable recovery — not the 8.76% tariff increase.</li>
+        <li><strong>Customers pay 100% of the charge every year.</strong> The widely quoted "20% in year 1, 30% in years 2 and 3" is only the share appearing as a fixed R/kVA line; the remaining 80%, then 70%, is recovered inside the energy charge.</li>
+        <li><strong>No part of the charge can be reduced by wheeling.</strong> The fixed portion is a demand charge, and NERSA explicitly excluded the energy-charge portion from the wheeling and net-billing credit.</li>
+      </ul>
+    </div>
 
     <p>Eskom's 2026/27 tariffs arrived with a headline increase of 8.76% for direct customers. Underneath it, one component of the Megaflex tariff rose by roughly half again.</p>
 
