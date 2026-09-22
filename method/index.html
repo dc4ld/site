@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Datum Markets - Independent measurement for southern African power markets</title>
-<meta name="description" content="Datum Markets independently checks what electricity really costs in southern Africa - bill reconciliation, wheeled deal benchmarking, and market data, every figure traced to a primary source.">
+<title>Method - Datum Markets</title>
+<meta name="description" content="How Datum Markets builds its numbers: public primary sources only, rates cross-checked between two published Eskom documents, an automated test suite, and a plain statement of what the work does not claim to be.">
 <link rel="icon" href="/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png">
@@ -180,59 +180,68 @@
     <nav class="nav" id="nav" aria-label="Main">
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <ul id="nav-links">
-        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/services/">Services</a></li>
-        <li><a href="/method/">Method</a></li>
+        <li><a href="/method/" aria-current="page">Method</a></li>
         <li><a href="/analysis/gcc-reallocation/">Analysis</a></li>
         <li><a href="mailto:info@datummarkets.co.uk">Contact</a></li>
       </ul>
     </nav>
-    <h1>We check what electricity really costs.</h1>
-    <p class="stand">Businesses in southern Africa spend millions on power through bills almost nobody verifies. We rebuild the numbers from the regulator's and the utility's own published documents.</p>
-    <div class="cta">
-      <a class="btn" href="mailto:david@datummarkets.co.uk?subject=Bill%20review%20request">Request a bill review</a>
-      <span class="cta-alt"><a href="mailto:info@datummarkets.co.uk">Ask a question</a></span>
-    </div>
+    <h1>Method</h1>
+    <p class="stand">How the numbers are built, what is checked before they are used, and what this work does not claim to be.</p>
   </header>
 
-  <section id="what-we-do">
-    <h2>What we do</h2>
-    <div class="grid">
-      <div class="item">
-        <h3>Check the bill</h3>
-        <p>We recompute an Eskom invoice line by line against the published rules.</p>
-      </div>
-      <div class="item">
-        <h3>Check the deal</h3>
-        <p>Wheeling is sold on claimed savings of 20 to 30%. We test the claim.</p>
-      </div>
-      <div class="item">
-        <h3>Make the market measurable</h3>
-        <p>Southern Africa's traded prices exist only inside PDF reports. We turn them into usable data.</p>
-      </div>
-    </div>
-    <p class="closing">Every figure is traced to the document it came from, <strong>so buyers, lenders and traders know what power actually costs, and whether a promised saving is real</strong>.</p>
+  <section id="who">
+    <h2>Who does the work</h2>
+    <p>Datum Markets is one person. David Jinadu is an ACCA accountant who rebuilds power market numbers from published primary sources, working from the United Kingdom on southern African markets. There is no data feed behind this and no panel of contributors.</p>
   </section>
 
-  <section id="who-its-for">
-    <h2>Who this suits</h2>
-    <div class="grid">
-      <div class="item"><h3>Large electricity users</h3><p>On Eskom Megaflex, above 1 MVA.</p></div>
-      <div class="item"><h3>Lenders and credit teams</h3><p>Financing wheeling and corporate power purchase agreements.</p></div>
-      <div class="item"><h3>Anyone modelling a wheeled PPA</h3><p>Where the credits that do not apply decide the saving.</p></div>
-    </div>
-    <p><a href="/services/">What a review covers</a></p>
+  <section id="sources">
+    <h2>Sources</h2>
+    <p>Public primary sources only: Eskom's published tariff rates workbooks, Eskom's Schedules of Standard Prices, and NERSA's published decisions. Every figure carries a reference to where it came from, down to the cell in the workbook, so you can open the source and check it rather than take it on trust. Where a number cannot be traced to a published document, it is not used.</p>
   </section>
 
-  <section id="finding">
-    <h2>A finding we have published</h2>
-    <p>Eskom's 2026/27 generation capacity charge is about 1.5 times the 2025/26 rate, and NERSA excludes it from the wheeling energy credit. A model that credits it back overstates the saving.</p>
-    <p><a href="/analysis/gcc-reallocation/">Read the analysis</a></p>
+  <section id="verification">
+    <h2>Verification</h2>
+    <p>Rates are cross-checked between two independently published Eskom documents before they are used. The generation capacity charge was checked this way across 2025/26 and 2026/27: sixteen values, four voltage bands by two tariff years, VAT exclusive and VAT inclusive, all matching between the rates workbook and the Schedule of Standard Prices.</p>
+  </section>
+
+  <section id="testing">
+    <h2>Testing</h2>
+    <p>The calculation engine has an automated test suite that runs on every change. It currently holds 72 assertions backed by 59 fixtures, each fixture a deliberately broken input proving the check it names actually fires. A check cannot be added without a test showing it can fail.</p>
+  </section>
+
+  <section id="versioning">
+    <h2>Versioning</h2>
+    <p>Every deliverable is dated and states which tariff year it used and which source documents it was built from, so the same result can be reproduced later rather than taken on its word.</p>
+  </section>
+
+  <section id="scope">
+    <h2>What this is not</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Not advice</h3>
+        <p>It is analysis. Nothing here is financial, legal or investment advice.</p>
+      </div>
+      <div class="item">
+        <h3>Not an audit</h3>
+        <p>A reconciliation is not a formal audit opinion and does not carry one.</p>
+      </div>
+      <div class="item">
+        <h3>Not a meter check</h3>
+        <p>We cannot confirm your meter readings. We can tell you whether the charges follow from those readings and the published rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="handover">
+    <h2>Working detail</h2>
+    <p>Working files are held in a version-controlled repository, so every figure in a deliverable can be traced back to the calculation and the source document that produced it. You can ask for the full working detail behind any figure at any time.</p>
   </section>
 
   <section id="contact">
     <h2>Start with one invoice</h2>
-    <p>Send the figures from a recent Eskom invoice. The reconciliation comes back in five working days, free.</p>
+    <p>Send the figures from a recent Eskom invoice. We return the reconciliation within five working days.</p>
     <div class="cta">
       <a class="btn" href="mailto:david@datummarkets.co.uk?subject=Bill%20review%20request">Request a bill review</a>
       <span class="cta-alt"><a href="mailto:info@datummarkets.co.uk">Ask a question</a></span>
