@@ -119,6 +119,57 @@
     font-family: var(--f-mono); font-size: 0.85rem;
     color: var(--ink-3); margin: 1.8rem 0 0;
   }
+  /* --- call to action ---------------------------------------------------
+     One primary action on the site. The button is the only element with a
+     filled accent background, so nothing else competes with it. */
+  .cta { margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.3rem; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--surface);
+    font-family: var(--f-display); font-size: 0.98rem; font-weight: 600;
+    letter-spacing: 0.01em; text-decoration: none;
+    padding: 0.8rem 1.4rem; border-radius: 3px; border: 1px solid var(--accent);
+  }
+  .btn:hover { text-decoration: none; opacity: 0.92; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cta-alt { font-family: var(--f-display); font-size: 0.95rem; }
+
+  /* --- what you get, who it is for -------------------------------------- */
+  .spec { margin: 0 0 1.2rem; }
+  .spec dt {
+    font-family: var(--f-display); font-weight: 600; font-size: 0.95rem;
+    color: var(--ink); margin: 1rem 0 0.15rem;
+  }
+  .spec dd { margin: 0; font-size: 0.97rem; color: var(--ink-2); }
+  .spec ul { margin: 0.3rem 0 0; padding-left: 1.15rem; font-size: 0.97rem; color: var(--ink-2); }
+  .spec li { margin: 0 0 0.25em; }
+
+  /* --- specimen table ----------------------------------------------------
+     The label sits above the table and outside the scroll container, so it
+     cannot be scrolled away from the figures it qualifies. */
+  .specimen-label {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 3px;
+    padding: 0.85rem 1.1rem; margin: 0 0 0.9rem;
+    font-family: var(--f-display); font-size: 0.92rem; line-height: 1.5;
+    color: var(--ink); font-weight: 600;
+  }
+  .table-wrap {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border); border-radius: 3px;
+    background: var(--surface); margin: 0 0 1rem;
+  }
+  table { border-collapse: collapse; width: 100%; font-family: var(--f-mono); font-size: 0.76rem; }
+  th, td { padding: 0.55rem 0.9rem; text-align: left; white-space: nowrap; }
+  thead th {
+    font-weight: 600; color: var(--ink-3); text-transform: uppercase;
+    letter-spacing: 0.06em; font-size: 0.66rem; border-bottom: 1px solid var(--border);
+  }
+  tbody tr + tr td { border-top: 1px solid var(--border); }
+  td.num { text-align: right; }
+  td.var { text-align: right; color: var(--accent); font-weight: 600; }
+  tfoot td { border-top: 2px solid var(--border); font-weight: 600; }
+  .src { color: var(--ink-3); }
+
   a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
   footer {
     border-top: 1px solid var(--border); padding: 1.4rem 0 2.5rem;
@@ -137,6 +188,7 @@
       <ul id="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="#what-we-do">What we do</a></li>
+        <li><a href="#bill-review">Bill review</a></li>
         <li><a href="/analysis/gcc-reallocation/">Analysis</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="mailto:info@datummarkets.co.uk">Contact</a></li>
@@ -144,6 +196,10 @@
     </nav>
     <h1>We check what electricity really costs.</h1>
     <p class="stand">Businesses in southern Africa spend millions on power through bills and contracts that almost nobody independently verifies. Datum Markets rebuilds the numbers from the regulator's and the utility's own published documents.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:david@datummarkets.co.uk?subject=Bill%20review%20request">Request a bill review</a>
+      <span class="cta-alt"><a href="mailto:info@datummarkets.co.uk">Ask a question</a></span>
+    </div>
   </header>
 
   <section id="what-we-do">
@@ -165,6 +221,95 @@
     <p class="closing">Every figure is traced back to the document it came from, <strong>so buyers, lenders and traders know what power actually costs, and whether a promised saving is real</strong>.</p>
   </section>
 
+  <section id="bill-review">
+    <h2>The bill review</h2>
+    <p>We recompute one Eskom invoice line by line from the published tariff rules and NERSA's decisions, and report every line where the bill and the rules disagree.</p>
+
+    <dl class="spec">
+      <dt>What we need</dt>
+      <dd>The figures only, not the invoice document:
+        <ul>
+          <li>Kilowatt-hours by time-of-use period and season</li>
+          <li>Chargeable demand and utilised capacity, in kilovolt-amperes</li>
+          <li>Days in the billing period and number of points of delivery</li>
+          <li>Voltage band and transmission distance zone</li>
+          <li>The charge lines, excluding Value-Added Tax</li>
+        </ul>
+      </dd>
+
+      <dt>What comes back</dt>
+      <dd>The reconciliation, line by line: what the published rules produce for each charge, what the invoice charged, and the variance between them.</dd>
+
+      <dt>Turnaround</dt>
+      <dd>Five working days from receiving the figures.</dd>
+
+      <dt>Cost</dt>
+      <dd>Free, with no obligation. The result is yours to keep.</dd>
+    </dl>
+  </section>
+
+  <section id="who-its-for">
+    <h2>Who this suits</h2>
+    <div class="what">
+      <div class="item">
+        <h3>Large electricity users</h3>
+        <p>On Eskom Megaflex, above 1 MVA, where the charge structure has sixteen components and the demand-based ones dominate.</p>
+      </div>
+      <div class="item">
+        <h3>Lenders and credit teams</h3>
+        <p>Financing wheeling and corporate power purchase agreements, where the saving assumed in the model decides whether the deal works.</p>
+      </div>
+      <div class="item">
+        <h3>Anyone modelling a wheeled PPA</h3>
+        <p>Where the network charges and the credits that do not apply are the difference between a real saving and a claimed one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="specimen">
+    <h2>What a reconciliation looks like</h2>
+
+    <p class="specimen-label">Specimen. The rates are Eskom's published 2026/27 rates. The consumption and demand figures are illustrative and do not describe any real customer.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Charge line</th>
+            <th scope="col">Basis</th>
+            <th scope="col">Rate (source)</th>
+            <th scope="col">Expected</th>
+            <th scope="col">Charged</th>
+            <th scope="col">Variance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Active energy, peak</td><td>120,000 kWh</td><td>720.19 c/kWh <span class="src">Megaflex NLA!J9</span></td><td class="num">864,228.00</td><td class="num">864,228.00</td><td class="var">&mdash;</td></tr>
+          <tr><td>Active energy, standard</td><td>340,000 kWh</td><td>180.05 c/kWh <span class="src">Megaflex NLA!L9</span></td><td class="num">612,170.00</td><td class="num">612,170.00</td><td class="var">&mdash;</td></tr>
+          <tr><td>Active energy, off-peak</td><td>290,000 kWh</td><td>120.03 c/kWh <span class="src">Megaflex NLA!N9</span></td><td class="num">348,087.00</td><td class="num">348,087.00</td><td class="var">&mdash;</td></tr>
+          <tr><td>Network demand</td><td>4,800 kVA chargeable demand</td><td>26.29 R/kVA/month <span class="src">Megaflex NLA!L31</span></td><td class="num">126,192.00</td><td class="num">131,450.00</td><td class="var">+5,258.00</td></tr>
+          <tr><td>Network capacity</td><td>5,000 kVA utilised capacity</td><td>39.13 R/kVA/month <span class="src">Megaflex NLA!J31</span></td><td class="num">195,650.00</td><td class="num">195,650.00</td><td class="var">&mdash;</td></tr>
+          <tr><td>Generation capacity</td><td>5,000 kVA utilised capacity</td><td>12.27 R/kVA/month <span class="src">Megaflex NLA!X9</span></td><td class="num">61,350.00</td><td class="num">61,350.00</td><td class="var">&mdash;</td></tr>
+          <tr><td>Service and administration</td><td>1 POD, 31 days</td><td>215.91 + 21.07 R/POD/day <span class="src">Megaflex NLA!J39, L39</span></td><td class="num">7,346.38</td><td class="num">7,346.38</td><td class="var">&mdash;</td></tr>
+          <tr><td>Ancillary service</td><td>750,000 kWh</td><td>0.42 c/kWh <span class="src">Megaflex NLA!S31</span></td><td class="num">3,150.00</td><td class="num">3,360.00</td><td class="var">+210.00</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>Total, excluding VAT</td><td></td><td></td><td class="num">2,218,173.38</td><td class="num">2,223,641.38</td><td class="var">+5,468.00</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p>Two lines disagree here. The network demand charge has been applied to utilised capacity rather than to chargeable demand, and the ancillary service charge to a kilowatt-hour total that is not the one metered. Both are basis errors rather than wrong rates, which is the kind that survives a look down the invoice.</p>
+  </section>
+
+  <section id="finding">
+    <h2>A finding we have published</h2>
+    <p>Eskom's 2026/27 generation capacity charge is about 1.5 times the 2025/26 rate at every voltage band. That is not the 8.76% annual increase. It is a reallocation between fixed and variable recovery, set out in NERSA's Reasons for Decision.</p>
+    <p>The part that matters to a wheeling model is separate. NERSA excludes the charge from the energy credit under wheeling and net-billing, so a model that credits any part of it back to the customer overstates the saving.</p>
+    <p>How much that moves any particular bill depends on that customer's load factor and consumption. It is arithmetic, and it has to be done per customer, which is what the bill review does.</p>
+    <p><a href="/analysis/gcc-reallocation/">Read the analysis</a></p>
+  </section>
+
   <section id="analysis">
     <h2>Analysis</h2>
     <div class="card">
@@ -178,7 +323,15 @@
     <h2>About</h2>
     <p>Datum Markets is one person. David Jinadu is an ACCA accountant who rebuilds power market numbers from published primary sources, working from the United Kingdom on southern African markets.</p>
     <p>There is no data feed behind this and no panel of contributors. Every figure comes from a document anyone can download: a regulator's decision, a published tariff schedule, a market operator's report. Each one carries the reference it came from, so a reader can check it rather than take it on trust. Where a number cannot be traced to a published document, it is not used.</p>
-    <p style="font-family:var(--f-mono);font-size:0.85rem;color:var(--ink-3)">Enquiries: <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Start with one invoice</h2>
+    <p>Send the figures from a recent Eskom invoice and we will return the reconciliation within five working days.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:david@datummarkets.co.uk?subject=Bill%20review%20request">Request a bill review</a>
+      <span class="cta-alt"><a href="mailto:info@datummarkets.co.uk">Ask a question</a></span>
+    </div>
     <p class="mailnote">To get new analysis by email, write to <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></p>
   </section>
 

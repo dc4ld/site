@@ -181,6 +181,25 @@
     font-family: var(--f-mono); font-size: 0.85rem;
     color: var(--ink-3); margin: 1.8rem 0 0;
   }
+  /* --- call to action, identical to the home page ----------------------- */
+  .cta { margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.3rem; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--surface);
+    font-family: var(--f-display); font-size: 0.98rem; font-weight: 600;
+    letter-spacing: 0.01em; text-decoration: none;
+    padding: 0.8rem 1.4rem; border-radius: 3px; border: 1px solid var(--accent);
+  }
+  .btn:hover { text-decoration: none; opacity: 0.92; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cta-alt { font-family: var(--f-display); font-size: 0.95rem; }
+  .cta-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 3px;
+    padding: 1.3rem 1.5rem; margin: 2.4rem 0 0;
+  }
+  .cta-box h2 { margin: 0 0 0.5rem; }
+  .cta-box p { font-size: 0.97rem; color: var(--ink-2); margin: 0; }
+
   a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
   footer {
     border-top: 1px solid var(--border); padding: 1.4rem 0 2.5rem;
@@ -199,6 +218,7 @@
       <ul id="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/#what-we-do">What we do</a></li>
+        <li><a href="/#bill-review">Bill review</a></li>
         <li><a href="/analysis/gcc-reallocation/">Analysis</a></li>
         <li><a href="/#about">About</a></li>
         <li><a href="mailto:info@datummarkets.co.uk">Contact</a></li>
@@ -347,6 +367,15 @@
     <p>The 1.5× ratio is computed from the two published schedules. NERSA publishes the 20/30 and 80/70 splits; the ratio follows from them and from the underlying rates, and is not itself a regulated figure.</p>
 
     <p>One note on the source documents. Eskom's published 2025/26 rates workbook contains cells on the WEPS sheet that evaluate to <code>#REF!</code> as shipped. The rates are readable in the PDF schedule instead, and nothing above depends on them. It is a small thing, and a useful reminder: a published file is not the same as a checked one.</p>
+
+    <div class="cta-box">
+      <h2>Is this costing you anything?</h2>
+      <p>That depends on your load factor and your consumption, and it is arithmetic that has to be done per customer. Send the figures from a recent Eskom invoice and we will recompute it line by line against the published rules, and return the reconciliation within five working days. Free, with no obligation.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:david@datummarkets.co.uk?subject=Bill%20review%20request">Request a bill review</a>
+        <span class="cta-alt"><a href="mailto:info@datummarkets.co.uk">Ask a question</a></span>
+      </div>
+    </div>
 
     <hr class="rule">
 
