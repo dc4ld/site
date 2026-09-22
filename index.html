@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Datum Markets — Independent measurement for southern African power markets</title>
-<meta name="description" content="Datum Markets independently checks what electricity really costs in southern Africa — bill reconciliation, wheeled deal benchmarking, and market data, every figure traced to a primary source.">
+<title>Datum Markets - Independent measurement for southern African power markets</title>
+<meta name="description" content="Datum Markets independently checks what electricity really costs in southern Africa - bill reconciliation, wheeled deal benchmarking, and market data, every figure traced to a primary source.">
+<link rel="icon" href="/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon-180.png">
 <style>
   :root {
     --ground: #F0F1F5; --surface: #FFFFFF; --ink: #13171F;
@@ -29,12 +33,49 @@
     min-height: 100vh; display: flex; flex-direction: column;
   }
   .wrap { max-width: 42rem; margin: 0 auto; width: 100%; flex: 1; }
-  header { padding: 4.5rem 0 2rem; border-bottom: 2px solid var(--ink); }
+  header { padding: 2rem 0; border-bottom: 2px solid var(--ink); }
   .kicker {
     font-family: var(--f-mono); font-size: 0.72rem; font-weight: 500;
     letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--accent); margin: 0 0 1.2rem;
   }
+  .kicker a { color: inherit; text-decoration: none; }
+  .kicker a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* --- navigation -------------------------------------------------------
+     Progressive enhancement. The links are plain markup, visible by default,
+     so they work with JavaScript disabled. The script adds .js, and that
+     class is the only thing that lets the narrow-screen rules hide them
+     behind the toggle. No script, no hiding. */
+  .nav { margin: 0 0 2rem; }
+  .nav ul {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem;
+    font-family: var(--f-mono); font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .nav a { color: var(--ink-2); text-decoration: none; }
+  .nav a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+  .nav-toggle {
+    display: none;
+    font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 3px; padding: 0.5rem 0.8rem; cursor: pointer;
+  }
+  .nav-toggle:hover { color: var(--accent); }
+  .nav-toggle:focus-visible, .nav a:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px;
+  }
+  @media (max-width: 640px) {
+    .nav.js .nav-toggle { display: inline-block; }
+    .nav.js ul { display: none; flex-direction: column; gap: 0; margin-top: 0.9rem; }
+    .nav.js.open ul { display: flex; }
+    .nav.js ul li { border-bottom: 1px solid var(--border); }
+    .nav.js ul li:first-child { border-top: 1px solid var(--border); }
+    .nav.js ul a { display: block; padding: 0.75rem 0.1rem; }
+  }
+
   h1 {
     font-family: var(--f-display); font-weight: 700;
     font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1.05;
@@ -42,6 +83,7 @@
   }
   .stand { font-size: 1.1rem; color: var(--ink-2); margin: 0; max-width: 36rem; }
   section { padding: 2.5rem 0; }
+  section + section { padding-top: 0; }
   p { margin: 0 0 1.05em; }
   p:last-child { margin-bottom: 0; }
   h2 {
@@ -58,6 +100,8 @@
     font-size: 1rem; margin: 0 0 0.3rem;
   }
   .item p { font-size: 0.95rem; color: var(--ink-2); margin: 0; }
+  .closing { font-size: 1rem; color: var(--ink-2); }
+  .closing strong { color: var(--ink); }
   .card {
     background: var(--surface); border: 1px solid var(--border);
     border-left: 3px solid var(--accent); border-radius: 3px;
@@ -87,12 +131,22 @@
 <div class="wrap">
 
   <header>
-    <p class="kicker">Datum Markets</p>
+    <p class="kicker"><a href="/">Datum Markets</a></p>
+    <nav class="nav" id="nav" aria-label="Main">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul id="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#what-we-do">What we do</a></li>
+        <li><a href="/analysis/gcc-reallocation/">Analysis</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mailto:info@datummarkets.co.uk">Contact</a></li>
+      </ul>
+    </nav>
     <h1>We check what electricity really costs.</h1>
-    <p class="stand">Businesses in southern Africa spend millions on power through bills and contracts that almost nobody independently verifies. Datum Markets rebuilds the numbers from the regulator's and the utility's own published documents — so buyers, lenders and traders know what power actually costs, and whether a promised saving is real.</p>
+    <p class="stand">Businesses in southern Africa spend millions on power through bills and contracts that almost nobody independently verifies. Datum Markets rebuilds the numbers from the regulator's and the utility's own published documents.</p>
   </header>
 
-  <section>
+  <section id="what-we-do">
     <h2>What we do</h2>
     <div class="what">
       <div class="item">
@@ -101,28 +155,64 @@
       </div>
       <div class="item">
         <h3>Check the deal</h3>
-        <p>Renewable power delivered over the grid — "wheeling" — is sold on claimed savings of 20–30%. We provide the independent benchmark that tests those claims, including the network charges the sales spreadsheets tend to leave out.</p>
+        <p>Renewable power delivered over the grid, known as wheeling, is sold on claimed savings of 20 to 30%. We provide the independent benchmark that tests those claims, including the network charges the sales spreadsheets tend to leave out.</p>
       </div>
       <div class="item">
         <h3>Make the market measurable</h3>
-        <p>Southern Africa's traded electricity prices exist only inside PDF reports. We turn them into clean, usable data — and as South Africa's new wholesale market opens, we'll be measuring it from day one.</p>
+        <p>Southern Africa's traded electricity prices exist only inside PDF reports. We turn them into usable data, and we will be measuring South Africa's new wholesale market when it opens.</p>
       </div>
     </div>
+    <p class="closing">Every figure is traced back to the document it came from, <strong>so buyers, lenders and traders know what power actually costs, and whether a promised saving is real</strong>.</p>
+  </section>
 
+  <section id="analysis">
+    <h2>Analysis</h2>
     <div class="card">
       <h2><a href="/analysis/gcc-reallocation/">The 20% that isn't a discount</a></h2>
-      <p>Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30% — customers pay the full charge in every year, and no part of it can be reduced by wheeling.</p>
+      <p>Eskom's generation capacity charge is commonly summarised as phased in at 20% then 30%. Customers pay the full charge in every year, and no part of it can be reduced by wheeling.</p>
       <p class="meta">14 September 2026 &middot; <a href="/analysis/gcc-reallocation/">Read the analysis</a></p>
     </div>
+  </section>
 
+  <section id="about">
+    <h2>About</h2>
+    <p>Datum Markets is one person. David Jinadu is a chartered accountant who rebuilds power market numbers from published primary sources, working from the United Kingdom on southern African markets.</p>
+    <p>There is no data feed behind this and no panel of contributors. Every figure comes from a document anyone can download: a regulator's decision, a published tariff schedule, a market operator's report. Each one carries the reference it came from, so a reader can check it rather than take it on trust. Where a number cannot be traced to a published document, it is not used.</p>
     <p style="font-family:var(--f-mono);font-size:0.85rem;color:var(--ink-3)">Enquiries: <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></p>
     <p class="mailnote">To get new analysis by email, write to <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></p>
   </section>
 
   <footer>
-    <p>Datum Markets · David Jinadu, United Kingdom. Everything we publish is built from public primary sources — regulator decisions, published tariff schedules, market operator reports — and every figure carries its source reference. Nothing here is financial, legal or investment advice.</p>
+    <p>Datum Markets - David Jinadu, United Kingdom. Everything we publish is built from public primary sources: regulator decisions, published tariff schedules, market operator reports. Every figure carries its source reference. Nothing here is financial, legal or investment advice.</p>
   </footer>
 
 </div>
+<script>
+  // Collapse the nav on narrow screens. Adding .js is what enables the hiding
+  // rules in CSS, so if this script is blocked the links stay visible and
+  // every destination remains reachable.
+  (function () {
+    var nav = document.getElementById('nav');
+    var btn = nav.querySelector('.nav-toggle');
+    var list = document.getElementById('nav-links');
+    nav.classList.add('js');
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+    list.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { setOpen(false); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        setOpen(false);
+        btn.focus();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
