@@ -364,7 +364,15 @@
 
     <p>Every figure here comes from public documents.</p>
 
-    <p>The rates were extracted from Eskom's published tariff rates workbooks for 2025/26 and 2026/27, then independently cross-checked figure for figure against the corresponding Schedule of Standard Prices: sixteen values across four voltage bands and two years, VAT-exclusive and VAT-inclusive, all matching.</p>
+    <p>The rates were extracted from Eskom's published tariff rates workbooks for 2025/26 and 2026/27. Three separate checks sit behind them, and they are not equally strong, so they are worth separating.</p>
+
+    <p><strong>Checked automatically, on every build.</strong> Twenty figures read from Eskom's Schedules of Standard Prices are reconciled against the workbook extraction every time the model is rebuilt, to a tolerance of one hundredth of a percent. They are the Megaflex generation capacity charge at four voltage bands across two tariff years, and six WEPS rates across the same two years. All twenty currently reconcile at zero variance. All are VAT-exclusive.</p>
+
+    <p><strong>Checked once, by hand.</strong> On 5 and 6 September 2026 the Megaflex generation capacity charge was read directly off the rendered tables in both Schedules of Standard Prices, enlarged to confirm each digit, because those tables are images and carry no text layer. Sixteen values: eight excluding VAT and eight including it, across four voltage bands and two tariff years. All sixteen matched the workbook. The eight excluding VAT were loaded afterwards and are the ones the automated check now re-proves. The eight including VAT are not machine-verified and rest on that hand check alone.</p>
+
+    <p><strong>Checked against someone else's arithmetic.</strong> A South African tariff analyst, publishing independently, derived their own Megaflex figures from the same public source without sight of this extraction. The model reproduces six of them at zero variance, including a demand composite of R88.84 per kilovolt-ampere per month, which is four separate charges summed: 39.13 plus 26.29 plus 11.15 plus 12.27. That one tests more than a cell read. It tests that each charge was assigned to the right code and the right voltage and distance band, because a wrong assignment anywhere would break the total.</p>
+
+    <p>One limitation is worth stating rather than leaving for a reader to notice. The rates workbook and the Schedule of Standard Prices are both published by Eskom, so reconciling one against the other shows that the extraction is faithful to the source. It says nothing about whether the source is right. The analyst reconciliation is the only check here that does not originate with Eskom.</p>
 
     <p>The quotations, the R19.05 billion allocation and the 7%-down-from-23% comparison are from NERSA's Reasons for Decision on Eskom's Electricity Retail Tariff Plan, section 8.9. The 8.76% increase for direct customers is from Eskom's published 2026/27 tariff increase notice, which attributes it to NERSA's MYPD6 decisions; local authority tariffs rose 9.01% from 1 July, which is itself a reminder to check which schedule you are reading.</p>
 
@@ -382,6 +390,8 @@
     </div>
 
     <hr class="rule">
+
+    <p class="endnote"><strong>Correction, 26 September 2026.</strong> The Method section was clarified. It previously described the verification as a single cross-check of sixteen values. That conflated three separate checks of differing strength, and the sixteen-value figure did not match what the automated suite actually reproduces. The three are now stated apart: what is reconciled automatically on every build, what was checked once by hand and when, and the independent reconciliation against a third party's published figures, which was not mentioned before. No figure in the analysis changed, and no conclusion changed.</p>
 
     <p class="endnote"><em>Datum Markets builds independent tariff and wheeling analysis for southern African power markets from primary sources only. Every figure we publish carries its source reference. Enquiries: <a href="mailto:info@datummarkets.co.uk">info@datummarkets.co.uk</a></em></p>
 
